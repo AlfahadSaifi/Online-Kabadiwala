@@ -28,27 +28,30 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.green,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Center(
-            child: Lottie.asset('assets/animations/splash.json'),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 40.0, top: 20.0),
-            child: Text(
-              'Online \nKabadiWala',
-              style: GoogleFonts.roboto(
-                textStyle: const TextStyle(
-                  fontSize: 50,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white, // Set the text color here
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Expanded(
+              child: Lottie.asset('assets/animations/splash.json'),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 20.0, bottom: 40),
+              child: Text(
+                'Scrap Saathi',
+                style: GoogleFonts.roboto(
+                  textStyle: const TextStyle(
+                    fontSize: 40,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
                 ),
+                textAlign: TextAlign.center,
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
