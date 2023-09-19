@@ -22,7 +22,7 @@ class PricesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green,
+      
       appBar: AppBar(
         backgroundColor: Colors.lightGreen,
         title: Text(

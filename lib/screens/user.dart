@@ -7,7 +7,6 @@ class UserPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green,
       appBar: AppBar(
         title: Text(
           "User",
@@ -35,7 +34,7 @@ class UserPage extends StatelessWidget {
             style: GoogleFonts.roboto(
               textStyle: const TextStyle(
                 fontWeight: FontWeight.bold,
-                color: Colors.white,
+                color: Colors.green,
                 fontSize: 20,
               ),
             ),
@@ -49,7 +48,7 @@ class UserPage extends StatelessWidget {
               textStyle: const TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 20,
-                color: Colors.white,
+                color: Colors.green,
               ),
             ),
           ),

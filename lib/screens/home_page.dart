@@ -53,7 +53,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text(
           'Scrap Saathi',
@@ -69,10 +69,10 @@ class _HomePageState extends State<HomePage> {
         children: <Widget>[
           Container(
             height: 200,
-            margin: const EdgeInsets.fromLTRB(5, 10, 5, 0),
+            margin: const EdgeInsets.fromLTRB(10, 8, 10, 0),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10.0),
-              color: Colors.white,
+              color: Colors.black,
             ),
             child: PageView.builder(
               controller: _pageController,
@@ -84,13 +84,11 @@ class _HomePageState extends State<HomePage> {
                     borderRadius: BorderRadius.circular(10.0),
                     color: Colors.white,
                   ),
-                  width: 200,
                   child: Center(
                     child: Image.asset(
                       'assets/images/scrollimage$index.png',
-                      height: 200,
                       width: double.infinity,
-                      fit: BoxFit.fitWidth,
+                      fit: BoxFit.fill,
                     ),
                   ),
                 );
@@ -101,7 +99,7 @@ class _HomePageState extends State<HomePage> {
             dotsCount: 3,
             position: _currentPage,
             decorator: DotsDecorator(
-              color: Colors.white,
+              color: Colors.grey,
               activeColor: Colors.amberAccent,
               size: const Size.square(9.0),
               activeSize: const Size(18.0, 9.0),
@@ -111,13 +109,11 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-          const Expanded(
-            child: SizedBox(),
-          ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Align(
-              alignment: Alignment.bottomCenter,
+            padding: const EdgeInsets.fromLTRB(10, 25, 10, 10),
+            child: SizedBox(
+              height: 60,
+              width: double.infinity,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   elevation: 4,
@@ -126,9 +122,28 @@ class _HomePageState extends State<HomePage> {
                     borderRadius: BorderRadius.circular(10.0),
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        title: const Text('Under Production'),
+                        content: const Text(
+                            'This app is still under producion \nConsider it as a prototype only'),
+                        actions: <Widget>[
+                          TextButton(
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                            child: const Text('OK'),
+                          ),
+                        ],
+                      );
+                    },
+                  );
+                },
                 child: Text(
-                  "Schedule a pickup",
+                  "Schedule a Pickup",
                   style: GoogleFonts.roboto(
                     textStyle: const TextStyle(
                       fontSize: 25,
@@ -139,6 +154,9 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
+          ),
+          Expanded(
+            child: Image.asset("assets/images/homeImage.png"),
           ),
         ],
       ),
