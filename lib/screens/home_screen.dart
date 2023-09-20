@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:scrap_saathi/screens/home_page.dart';
+import 'package:scrap_saathi/screens/pickup.dart';
 import 'package:scrap_saathi/screens/prices.dart';
 import 'package:scrap_saathi/screens/user.dart';
 
@@ -15,6 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final List<Widget> _pages = [
     HomePage(),
     PricesPage(),
+    Pickup(),
     UserPage(),
   ];
 
@@ -27,39 +29,46 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: _pages.elementAt(_selectedIndex),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.lightGreen,
-        elevation: 100,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home,
-              color: Colors.white,
+        body: Center(
+          child: _pages.elementAt(_selectedIndex),
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: Colors.lightGreen,
+          elevation: 100,
+          type: BottomNavigationBarType.fixed,
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.home,
+                color: Colors.white,
+              ),
+              label: 'Home',
             ),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.search,
-              color: Colors.white,
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.search,
+                color: Colors.white,
+              ),
+              label: 'Prices',
             ),
-            label: 'Prices',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.person,
-              color: Colors.white,
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.car_rental,
+                color: Colors.white,
+              ),
+              label: 'Pickup',
             ),
-            label: 'User',
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.white,
-        onTap: _onItemTapped,
-      ),
-    );
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.person,
+                color: Colors.white,
+              ),
+              label: 'User',
+            ),
+          ],
+          currentIndex: _selectedIndex,
+          selectedItemColor: Colors.white,
+          onTap: _onItemTapped,
+        ));
   }
 }

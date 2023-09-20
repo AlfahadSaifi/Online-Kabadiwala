@@ -122,26 +122,7 @@ class _HomePageState extends State<HomePage> {
                     borderRadius: BorderRadius.circular(10.0),
                   ),
                 ),
-                onPressed: () {
-                  showDialog(
-                    context: context,
-                    builder: (BuildContext context) {
-                      return AlertDialog(
-                        title: const Text('Under Production'),
-                        content: const Text(
-                            'This app is still under producion \nConsider it as a prototype only'),
-                        actions: <Widget>[
-                          TextButton(
-                            onPressed: () {
-                              Navigator.of(context).pop();
-                            },
-                            child: const Text('OK'),
-                          ),
-                        ],
-                      );
-                    },
-                  );
-                },
+                onPressed: () {},
                 child: Text(
                   "Schedule a Pickup",
                   style: GoogleFonts.roboto(
