@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
+import 'package:scrap_saathi/screens/auth_screen.dart';
 import 'package:scrap_saathi/screens/home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -11,6 +12,7 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  final bool hasData = true;
   @override
   void initState() {
     super.initState();
@@ -18,7 +20,8 @@ class _SplashScreenState extends State<SplashScreen> {
     Future.delayed(const Duration(seconds: 3), () {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
-          builder: (BuildContext context) => const HomeScreen(selectedIndex: 0),
+          builder: (BuildContext context) =>
+              hasData ? const HomeScreen(selectedIndex: 0) : const AuthScreen(),
         ),
       );
     });

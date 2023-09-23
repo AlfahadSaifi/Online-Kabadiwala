@@ -52,10 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.search,
-              color: Colors.white,
-            ),
+            icon: Icon(Icons.price_check_sharp),
             label: 'Prices',
           ),
           BottomNavigationBarItem(
