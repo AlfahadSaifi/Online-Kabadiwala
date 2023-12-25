@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
@@ -18,11 +19,24 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
 
     Future.delayed(const Duration(seconds: 3), () {
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(
-          builder: (BuildContext context) =>
-              hasData ? const HomeScreen(selectedIndex: 0) : const AuthScreen(),
-        ),
+      StreamBuilder<User?>(
+        stream: FirebaseAuth.instance.authStateChanges(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            // Still waiting for authentication state, show SplashScreen
+            return SplashScreen();
+          }
+
+          User? user = snapshot.data;
+
+          if (user != null) {
+            // User is signed in
+            return HomeScreen(selectedIndex: 0);
+          } else {
+            // User is signed out or sign-in was unsuccessful
+            return AuthScreen();
+          }
+        },
       );
     });
   }

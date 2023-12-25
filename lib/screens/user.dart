@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -30,7 +31,7 @@ class UserPage extends StatelessWidget {
             height: 10,
           ),
           Text(
-            "Username",
+            "Username logic to be added",
             style: GoogleFonts.roboto(
               textStyle: const TextStyle(
                 fontWeight: FontWeight.bold,
@@ -43,7 +44,7 @@ class UserPage extends StatelessWidget {
             height: 10,
           ),
           Text(
-            "emailaddress@hotmail.com",
+            'email logic to be added',
             style: GoogleFonts.roboto(
               textStyle: const TextStyle(
                 fontWeight: FontWeight.bold,
@@ -57,7 +58,9 @@ class UserPage extends StatelessWidget {
             width: double.infinity,
           ),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              FirebaseAuth.instance.signOut();
+            },
             child: Text(
               'Logout',
               style: GoogleFonts.roboto(

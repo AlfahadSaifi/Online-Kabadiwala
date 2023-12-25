@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "632547078251",
+    "project_id": "scrap-saathi",
+    "storage_bucket": "scrap-saathi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:632547078251:android:74c0465585d9ba5603012e",
+        "android_client_info": {
+          "package_name": "com.alfahad.finalyearproject.scrap_saathi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcXgc4lRX932D4UxixHwZzDc5jfbzV7YE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
